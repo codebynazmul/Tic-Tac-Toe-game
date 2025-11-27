@@ -36,6 +36,8 @@ int main() {
     clearScreen();
 
     // ============================ ASCII ART ============================
+printf("\033[0;32m"); // GREEN COLOR START
+
 printf("88P'888'Y88 ,e,                  88P'888'Y88                          88P'888'Y88                     \n");
 printf("P'  888  'Y  \"   e88'888         P'  888  'Y  ,\"Y88b  e88'888         P'  888  'Y  e88 88e   ,e e,    \n");
 printf("    888     888 d888  '8   888       888     \"8\" 888 d888  '8   888       888     d888 888b d88 88b   \n");
@@ -43,6 +45,9 @@ printf("    888     888 Y888   ,             888     ,ee 888 Y888   ,           
 printf("    888     888  \"88,e8'             888     \"88 888  \"88,e8'             888      \"88 88\"   \"YeeP\"   \n");
 printf("                                                                                                      \n");
 printf("                                                                                                      \n");
+
+printf("\033[0m"); // RESET COLOR
+
 
     printf("\nPress ENTER to continue...");
     getchar();
