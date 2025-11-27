@@ -6,7 +6,6 @@ char board[3][3];
 char currentMarker;
 int currentPlayer;
 
-
 void resetBoard();
 void printBoard();
 int placeMarker(int row, int col);
@@ -23,12 +22,29 @@ int main() {
     currentPlayer = 1;
     currentMarker = 'X';
 
+    clearScreen();
+
+    // ============================
+    //       ASCII ART OPENING
+    // ============================
+printf("88P'888'Y88 ,e,                  88P'888'Y88                          88P'888'Y88                     \n");
+printf("P'  888  'Y  \"   e88'888         P'  888  'Y  ,\"Y88b  e88'888         P'  888  'Y  e88 88e   ,e e,    \n");
+printf("    888     888 d888  '8   888       888     \"8\" 888 d888  '8   888       888     d888 888b d88 88b   \n");
+printf("    888     888 Y888   ,             888     ,ee 888 Y888   ,             888     Y888 888P 888   ,   \n");
+printf("    888     888  \"88,e8'             888     \"88 888  \"88,e8'             888      \"88 88\"   \"YeeP\"   \n");
+printf("                                                                                                      \n");
+printf("                                                                                                      \n");
+
+    printf("\nPress ENTER to start the game...");
+    getchar();
+
     while (1) {
         clearScreen();
         printf("============================\n");
         printf("      TIC-TAC-TOE GAME       \n");
         printf("============================\n\n");
         printBoard();
+
         printf("\nPlayer %d (%c), enter row and column (1-3): ", currentPlayer, currentMarker);
         if (scanf("%d %d", &row, &col) != 2) {
             printf("Invalid input! Try again.\n");
@@ -67,18 +83,16 @@ int main() {
     }
 
     printf("\n====================================\n");
-    printf("  Developed by MD NAZMUL HASAN    \n");
+    printf("  Developed by MD NAZMUL HASAN     \n");
     printf("====================================\n");
     return 0;
 }
-
 
 void resetBoard() {
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
             board[i][j] = ' ';
 }
-
 
 void printBoard() {
     printf("     1   2   3\n");
@@ -92,14 +106,12 @@ void printBoard() {
     }
 }
 
-
 int placeMarker(int row, int col) {
     if (board[row][col] != ' ')
         return 0;
     board[row][col] = currentMarker;
     return 1;
 }
-
 
 int checkWin() {
     for (int i = 0; i < 3; i++) {
@@ -115,18 +127,16 @@ int checkWin() {
     return 0;
 }
 
-
 void switchPlayer() {
     currentPlayer = (currentPlayer == 1) ? 2 : 1;
     currentMarker = (currentMarker == 'X') ? 'O' : 'X';
 }
 
-
 void clearScreen() {
     fflush(stdout);
 #ifdef _WIN32
-    system("cls");   // Works on Windows (Code::Blocks, Dev-C++)
+    system("cls");
 #else
-    system("clear"); // Works on Linux, macOS
+    system("clear");
 #endif
 }
