@@ -1,4 +1,4 @@
-#  Tic-Tac-Toe in C
+###  Tic-Tac-Toe in C
 
 A fun, 2-player **Tic-Tac-Toe game** written in pure **C language** with a clean, console-based interface.  
 Each move refreshes the screen, providing a smooth, page-like experience.
@@ -26,6 +26,7 @@ Each move refreshes the screen, providing a smooth, page-like experience.
 - Some online C compilers **block** the `system("cls")` or `system("clear")` command.  
 - The game still runs, but the **clear-screen effect** may not display properly.  
 - For the best visual experience, use an **offline compiler**.
+
 
 
 
